@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using StarChartsBackend.DAL;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+//найти где прописывается скл подключение и прописать
+//поставь entity framework core
+builder.Services.AddDbContext<PlanetaryContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PlanetaryContext")));
 
 var app = builder.Build();
 

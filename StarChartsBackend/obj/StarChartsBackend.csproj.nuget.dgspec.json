@@ -46,6 +46,10 @@
               "target": "Package",
               "version": "[6.4.4, )"
             },
+            "StyleCop": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
