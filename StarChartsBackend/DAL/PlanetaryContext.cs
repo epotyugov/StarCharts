@@ -6,7 +6,7 @@ namespace StarChartsBackend.DAL;
 
 public class PlanetaryContext : DbContext
 {
-    public PlanetaryContext() : base()
+    public PlanetaryContext() : base(nameOrConnectionString: "Default")
     {
     }
     

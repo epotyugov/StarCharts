@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 //найти где прописывается скл подключение и прописать
 //поставь entity framework core
 builder.Services.AddDbContext<PlanetaryContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("PlanetaryContext")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
