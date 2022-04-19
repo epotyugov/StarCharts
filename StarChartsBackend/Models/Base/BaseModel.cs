@@ -5,5 +5,5 @@ namespace StarChartsBackend.Models.Base;
 public abstract class BaseModel
 {
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public Guid Id { get; set; }
+    public int Id { get; set; }
 }

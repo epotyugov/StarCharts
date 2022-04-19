@@ -10,9 +10,9 @@ public class CelestialBody : BaseModel
     public double Diameter { get; set; }
     public double Mass { get; set; }
     
-    public Guid PlanetarySystemId { get; set; }
+    public int PlanetarySystemId { get; set; }
     public virtual PlanetarySystem? System { get; set; }
     
-    public Guid CelestialBodyTypeId { get; set; }
+    public int CelestialBodyTypeId { get; set; }
     public virtual CelestialBodyType? BodyType { get; set; }
 }

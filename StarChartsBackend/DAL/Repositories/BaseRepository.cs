@@ -3,7 +3,7 @@ using StarChartsBackend.Models.Base;
 
 namespace StarChartsBackend.DAL.Repositories;
 
-public class BaseRepository<Model> : IBaseRepository<Model> where Model : BaseModel
+public class BaseRepository<TModel> : IBaseRepository<TModel> where TModel : BaseModel
 {
     private PlanetaryContext Context { get; set; }
     public BaseRepository(PlanetaryContext context)
@@ -11,27 +11,27 @@ public class BaseRepository<Model> : IBaseRepository<Model> where Model : BaseMo
         Context = context;
     }
 
-    public List<Model> GetAll()
+    public List<TModel> GetAll()
     {
-        return Context.Set<Model>().ToList();
+        return Context.Set<TModel>().ToList();
     }
 
-    public Model GetById(Guid id)
+    public TModel GetById(int id)
     {
-        return Context.Set<Model>().FirstOrDefault(model => model.Id == id);
+        return Context.Set<TModel>().FirstOrDefault(model => model.Id == id);
     }
 
-    public Model Create(Model model)
+    public TModel Create(TModel model)
     {
-        Context.Set<Model>().Add(model);
+        Context.Set<TModel>().Add(model);
         Context.SaveChanges();
         
         return model;
     }
 
-    public Model Update(Model model)
+    public TModel Update(TModel model)
     {
-        Model modelForUpdating = Context.Set<Model>().FirstOrDefault(elem => elem.Id == model.Id);
+        TModel modelForUpdating = Context.Set<TModel>().FirstOrDefault(elem => elem.Id == model.Id);
         /*
          зачем, а главное зачем? глянь другие примеры репозиториев
          if (modelForUpdating != null)
@@ -40,15 +40,15 @@ public class BaseRepository<Model> : IBaseRepository<Model> where Model : BaseMo
         }
         */
 
-        Context.Set<Model>().AddOrUpdate(model);
+        Context.Set<TModel>().AddOrUpdate(model);
         Context.SaveChanges();
         return modelForUpdating;
     }
 
-    public void Delete(Guid id)
+    public void Delete(int id)
     {
-        Model modelForDeletion = Context.Set<Model>().FirstOrDefault(model => model.Id == id);
-        Context.Set<Model>().Remove(modelForDeletion);
+        TModel modelForDeletion = Context.Set<TModel>().FirstOrDefault(model => model.Id == id);
+        Context.Set<TModel>().Remove(modelForDeletion);
         Context.SaveChanges();
     }
 }
