@@ -40,7 +40,7 @@ public class BaseRepository<TModel> : IBaseRepository<TModel> where TModel : Bas
         }
         */
 
-        Context.Set<TModel>().AddOrUpdate(model);
+        Context.Set<TModel>().Update(model);
         Context.SaveChanges();
         return modelForUpdating;
     }

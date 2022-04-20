@@ -1,10 +1,12 @@
 using StarChartsBackend.Models;
+using System;
+using System.Linq;
 
 namespace StarChartsBackend.DAL;
 
-public class PlanetaryInitializer : System.Data.Entity. DropCreateDatabaseIfModelChanges<PlanetaryContext>
+public class PlanetaryInitializer
 {
-    protected override void Seed(PlanetaryContext context)
+    public static void Initialize(PlanetaryContext context)
     {
         List<CelestialBodyType> bodyTypes = new ()
         {

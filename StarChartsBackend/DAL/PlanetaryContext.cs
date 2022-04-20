@@ -1,11 +1,11 @@
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using StarChartsBackend.Models;
 
 namespace StarChartsBackend.DAL;
 
 public class PlanetaryContext : DbContext
 {
-    public PlanetaryContext() : base(nameOrConnectionString: "Default")
+    public PlanetaryContext(DbContextOptions<PlanetaryContext> options) : base(options)
     {
     }
     

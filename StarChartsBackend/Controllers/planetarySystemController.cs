@@ -1,6 +1,9 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace StarChartsBackend.Controllers;
 
-public class planetarySystemController
+[]
+public class PlanetarySystemController : ControllerBase
 {
     
 }

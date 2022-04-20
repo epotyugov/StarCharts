@@ -2033,24 +2033,30 @@
     ]
   },
   "packageFolders": {
-    "/home/potyagov/.nuget/packages/": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/potyagov/StarCharts/StarChartsBackend/StarChartsBackend.csproj",
+      "projectUniqueName": "D:\\work\\StarCharts\\StarChartsBackend\\StarChartsBackend.csproj",
       "projectName": "StarChartsBackend",
-      "projectPath": "/home/potyagov/StarCharts/StarChartsBackend/StarChartsBackend.csproj",
-      "packagesPath": "/home/potyagov/.nuget/packages/",
-      "outputPath": "/home/potyagov/StarCharts/StarChartsBackend/obj/",
+      "projectPath": "D:\\work\\StarCharts\\StarChartsBackend\\StarChartsBackend.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "D:\\work\\StarCharts\\StarChartsBackend\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "/home/potyagov/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2120,7 +2126,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/current/sdk/6.0.202/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   },
