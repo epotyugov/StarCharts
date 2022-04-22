@@ -7,20 +7,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public forecasts?: WeatherForecast[];
+  public planets?: Planet[];
+  public characteristics?: string[];
 
   constructor(http: HttpClient) {
-    http.get<WeatherForecast[]>('/weatherforecast').subscribe(result => {
-      this.forecasts = result;
+    // http.get<Planet[]>('/weatherforecast').subscribe(result => {
+    http.get<Planet[]>('/planetarysystem').subscribe(result => {
+      this.planets = result;
+      this.characteristics = [
+        'Название',
+        'Возвраст',
+        'Диаметр',
+        'Масса',
+        'Тип',
+        'Система',
+      ];
     }, error => console.error(error));
   }
 
   title = 'StarCharts';
 }
 
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
+interface Planet {
+  name: string;
+  age: number;
+  diameter: number;
+  mass: number;
+  type: string;
+  system: string;
 }
